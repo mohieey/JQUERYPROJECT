@@ -24,7 +24,7 @@ $(document).ready(function() {
             for (var index = 0; index < timeLineTweets.length; index++) {
 
                 for (var i = 0; i < currentUser.following.length; i++) {
-                    if (currentUser.following[i] == timeLineTweets[index].authorid || currentUser.id == timeLineTweets[index].authorid || currentUser.retweets.indexOf(timeLineTweets[index].id) != -1 ) {
+                    if (currentUser.following[i] == timeLineTweets[index].authorid || currentUser.id == timeLineTweets[index].authorid) {
                         $(".endoftweets").prepend('<div id="' + timeLineTweets[index].id + '" class="card my-3" >' +
 
                             '<div class="card-body" >' +
