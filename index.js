@@ -10,59 +10,7 @@ $(document).ready(function() {
 
 
 
-    // function getTweets() {
 
-    //     for (var index = 0; index < timeLineTweets.length; index++) {
-
-    //         for (var i = 0; i < currentUser.following.length; i++) {
-    //             if (currentUser.following[i] == timeLineTweets[index].authorid || currentUser.userid == timeLineTweets[index].authorid) {
-    //                 $(".endoftweets").prepend('<div id="' + timeLineTweets[index].id + '" class="card my-3">' +
-
-    //                     '<div class="card-body">' +
-    //                     '<h4 class="card-title"><i><a class="visit" href="#">' + timeLineTweets[index].authorname + '</a> </i></h4><hr><hr>' +
-    //                     '<h4 class="card-title">' + timeLineTweets[index].body + '</h4>' +
-    //                     '<p class="card-text">' +
-    //                     '<div class="row">' +
-    //                     ' <col-sm>' +
-    //                     '<img class="interactionbtns like colorLike" src="https://img.icons8.com/carbon-copy/100/000000/like--v2.png" />' +
-    //                     '</col-sm>' +
-    //                     ' <div class="col-sm"></div>' +
-    //                     ' <col-sm>' +
-    //                     '<p>' + timeLineTweets[index].Likes + '</p>' +
-    //                     '</col-sm>' +
-    //                     ' <div class="col-sm"></div>' +
-    //                     ' <col-sm>' +
-    //                     '<img class="interactionbtns retweet colorRetweet" src="https://img.icons8.com/ios-filled/100/000000/retweet.png" />' +
-    //                     ' </col-sm>' +
-    //                     '<div class="col-sm">' +
-    //                     '</div>' +
-    //                     ' <col-sm>' +
-    //                     '<p>' + timeLineTweets[index].Retweets + '</p>' +
-    //                     '</col-sm>' +
-    //                     ' <div class="col-sm"></div>' +
-    //                     '<col-sm>' +
-    //                     '<img class="interactionbtns reply colorReply" data-toggle="modal" data-target="#reply" src="https://img.icons8.com/wired/64/000000/reply-arrow.png" />' +
-    //                     '</col-sm>' +
-    //                     '<div class="col-sm">' +
-
-    //                     '</div>' +
-    //                     '<col-sm>' +
-    //                     '<img class="interactionbtns bookmark" src="https://img.icons8.com/ios/100/000000/add-bookmark.png" />' +
-    //                     '</col-sm>' +
-    //                     '<div class="col-sm">' +
-
-    //                     '</div>' +
-    //                     '<col-sm>' +
-    //                     '<img style="display: none;" class="interactionbtns delete delbtn" src="https://img.icons8.com/flat_round/128/000000/delete-sign.png" />' +
-    //                     '</col-sm>' +
-    //                     '</div>' +
-    //                     '</p>' +
-    //                     '</div>' +
-    //                     '</div>');
-    //             }
-    //         }
-    //     }
-    // }
     function getTweets() {
         if (usersInfo.length == 1) {
             $(".endoftweets").prepend('<h1>There is no users except you, go create others and search for them and follow them</h1>');
@@ -76,7 +24,7 @@ $(document).ready(function() {
             for (var index = 0; index < timeLineTweets.length; index++) {
 
                 for (var i = 0; i < currentUser.following.length; i++) {
-                    if (currentUser.following[i] == timeLineTweets[index].authorid || currentUser.id == timeLineTweets[index].authorid) {
+                    if (currentUser.following[i] == timeLineTweets[index].authorid || currentUser.id == timeLineTweets[index].authorid || if(currentUser.retweets.indexOf(timeLineTweets[index].id) != -1) ) {
                         $(".endoftweets").prepend('<div id="' + timeLineTweets[index].id + '" class="card my-3" >' +
 
                             '<div class="card-body" >' +
